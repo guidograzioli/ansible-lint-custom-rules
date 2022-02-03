@@ -34,14 +34,15 @@ DESC: str = r"""Rule to test if files are smalll enough.
 """
 
 VERBS: typing.List[str] = """\
-ask be become begin call can come could do feel find ensure get give go have
-hear help keep know leave let like live look make may mean might move need play
-put run say see seem should show start take talk tell test think try turn use
-want will work would\
+add assemble become begin call check collect configure copy create debug
+delete deploy determine disable download enable ensure execute exit extract
+fail find generate get go install help keep let link load look make move
+notify parse perform put refresh reload remove reown retrieve restart run
+set show start stop take talk tell test try update use validate verify wait work \
 """.split()
 
 DEFAULT_NAME_RE: typing.Pattern = re.compile(
-    r'(' + '|'.join(VERBS + [v.title() for v in VERBS]) + r')(\s+(\S+))+$',
+    r'(' + '|'.join(VERBS + [v.capitalize() for v in VERBS]) + r')(\s+(\S+))+$',
     re.ASCII
 )
 
